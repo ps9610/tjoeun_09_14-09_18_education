@@ -1,0 +1,323 @@
+*{margin: 0; padding: 0;}
+html{overflow-y: scroll;}
+
+dl,dt,ul,li{list-style: none;}
+a{text-decoration: none; color: #666666;}
+
+.cf:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#pop{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 999999;
+	display: none;
+}
+#pop img{
+	width: 800px;
+	position: absolute;
+	top: 16%;
+	left: 50%;
+	margin-left: -400px;
+}
+#pop input{
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	font-weight: bold;
+	background: white;
+	border: none;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	margin-left: -25px;
+}
+#pop.open{display: block;}
+
+
+
+#wrap{
+	width: 1150px;
+	margin: 50px auto;
+}
+#header{
+	width: 1150px;
+	height: 100px;
+}
+#logo{
+	width: 150px;
+	height: 100px;
+	float: left;
+}
+#logo img{width: 100%;}
+#loginForm{
+	height: 50px;
+	float: right;
+}
+#loginForm input[type="button"]{
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	border: 0px;
+	background: #a6832f;
+	color: white;
+	font-weight: bold;
+}
+#loginForm input[type="text"]{
+	width: 140px;
+	height: 28px;
+	padding-left: 10px;
+	line-height: 30px;
+	border: 1px solid #a6832f;
+	background: white;
+}
+
+#menu{
+	height: 50px;
+	float: right;
+}
+#menu ul li{
+	width: 160px;
+	height: 50px;
+	padding: 0px 15px;
+	background: #a6832f;
+	float: left;
+	line-height: 50px;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+}
+#menu ul li a{color: white;}
+#menu ul li:hover{font-weight: bold; background: #cac1ac;}
+#menu ul li:hover a{color: black;}
+#menu ul li:hover .TD{display: block;}
+#menu ul li:hover ul{
+	width: 180px;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	z-index: 9999;
+}
+#menu ul li:hover ul li{
+	clear: both;
+	background: #cac1ac;
+	font-weight: normal; 
+}
+#menu ul li ul li:hover{background: #a6832f;}
+#menu ul li ul li a{color: black;}
+#menu ul li ul li:hover a{text-shadow: 0 0 15px white; font-weight: bold;}
+.TD{display: none;}
+
+
+#mainSlide{
+	width: 1150px;
+	height: 390px;
+	overflow: hidden;
+	position: relative;
+}
+#imgs{
+	width: 1150px;
+	height: 1170px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+#imgs div{
+	width: 1150px;
+	height: 390px;
+	overflow: hidden;
+}
+#imgs div img{width: 100%; margin-top: -70px;}
+
+
+
+#content{
+	width: 1110px;
+	height: 760px;
+	padding: 20px;
+	background: #eeeeee;
+}
+.title{
+	width: 100%;
+	height: 30px;
+	line-height: 26px;
+	text-align: center;
+	font-weight: bold;
+	background: #a6832f;
+	font-size: 18px;
+	color: white;
+}
+.content1{
+	background: url(../images/content이미지/art1_bg.jpg) no-repeat center;
+	background-size: cover;
+	width: 500px;
+	height: 300px;
+	float: left;
+	margin-bottom: 20px;
+}
+.contText{
+	margin-left: 30px;
+	margin-top: 30px;
+	opacity: 0.8;
+}
+.contText .cont1Cate{float: left;}
+.contText .cont1Cate li{
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	margin-bottom: 3px;	
+	font-weight: bold;
+	background: #a6832f;
+}
+.contText .cont1Cate li a{color: white;}
+.contText .cont1Text{float: left;}
+.contText .cont1Text li{
+	width: 115px;
+	height: 25px;
+	line-height: 25px;
+	text-align: left;
+	margin-bottom: 3px;
+	background: white;
+	padding-left: 5px;
+}
+
+
+.content2{
+	width: 590px;
+	height: 300px;
+	float: right;
+	background: white url(../images/content이미지/bg_clock.png) no-repeat 95% 95%;
+	background-size: 300px auto;
+}
+.content2 p{
+	font-size: 30px;
+	padding-left: 40px;
+	padding-top: 40px;
+}
+.content2 input{
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	background: #a6832f;
+	font-weight: bold;
+	border: none;
+	margin: 20px 0 0 40px;
+	color: white;
+	border-radius: 5px;
+}
+.content2 input:hover{background: gray; text-decoration: underline;}
+
+
+.content3{
+	width: 1110px;
+	background: white;
+	clear: both;
+	float: left;
+	margin-bottom: 20px;
+}
+.content3 img{float: left; height: 130px; margin: 10px 0 10px 0;}
+.content3 .NN{
+	width: 485px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.NN li{
+	height: 25px;
+	line-height: 25px;
+	border-bottom: 1px solid #dbdbdb;
+}
+.NN li:hover{text-decoration: underline;}
+.NN .moreBtn{
+	width: 80px;
+	height: 20px;
+	line-height: 20px;
+	border: none;
+	background: #eeeeee;
+	border-radius: 5px;
+	float: right;
+	font-weight: bold;
+	margin-top: 2.5px;
+}
+.NN .moreBtn:hover{background: gray; color: white;}
+
+
+.content4{
+	clear: both; 
+	float: left;
+	width: 500px;
+	height: 240px;
+	background: white url(../images/content이미지/bg_coffee.png) no-repeat 92% 92%;
+	background-size: 250px auto;
+}
+.content4 p{
+	font-size: 24px;
+	padding: 40px 0 0 40px;
+	font-weight: bold;
+	color: #a6832f;
+}
+.content5{
+	float: right;
+	width: 590px;
+	height: 240px;
+	background: white;
+}
+.content5 img{width: 230px; padding: 20px 0 0 60px; float: left;}
+.content5 .modal{
+	margin: 20px 0 0 20px; 
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	vertical-align: middle;
+	float: left;
+	background: #a6832f;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+}
+.content5 .modal:hover{background: gray; text-decoration: underline;}
+.content5 p{
+	width: 260px;
+	margin: 20px 0 0 20px;
+	float: left;
+	font-size: 24px;
+}
+
+#footer{
+	width: 1150px;
+	height: 72px;
+	background: #a6832f;
+	text-align: center;
+	line-height: 15px;
+	font-size: 14px;
+	padding-top: 8px;
+	color: white;
+}
+#footer span{font-weight: bold;}
+#footer img{height: 15px; margin-bottom: 3px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

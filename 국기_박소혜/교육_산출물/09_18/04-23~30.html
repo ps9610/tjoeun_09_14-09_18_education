@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>04-23, 26~30 | inline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="04-23, 26~30">
+    <meta name="publisher" content="Park Sohye">
+</head>
+<body>
+    <h1>04-23 드롭 다운 목록 select = 늘어진목록상자</h1>
+    <div>
+        <label for="likeFood">선호하는 식사</label>
+        <div>
+            <select name="likeFood" id="likeFood" size="1">
+                <!-- size=1은 하나씩 보여주기방식  -->
+                <option value="">다음 중 선호하는 식사시간을 고르세요.</option>
+                <!-- 옵션은 value라는 속성이 있음 근데 공백
+                     왜:placeholder역할을 하려고 (선택영역일뿐)-->
+                <option value="breakfast">아침</option>
+                <option value="brunch" selected>브런치</option>
+                                <!-- selected = choice값 (고정값)
+                                근데 value=""와 같은 디폴트값에는 굳이써주지 않아도 됨 -->
+                <option value="lunch">점심</option>
+                <option value="l&d">점저</option>
+                <option value="dinner">저녁</option>
+                <option value="lateDinner">야식</option>
+            </select>
+            <!-- 여러개중에하나를선택하거나 여러개선택가능 -->
+        </div>
+    </div>
+
+    <h1>04-28 폼 여러줄 텍스트 입력상자 textarea</h1>
+    <div>
+        <label for="fNotice">메모장</label>
+        <div>
+            <textarea name="fNotice" id="fNotice" value=""
+            style="width:80%;
+            height:150px;
+            resize: none;"></textarea>
+            <!-- textarea 태그는 둘 사이를 절대로 띄어쓰지 않는다(공백생김)
+            rows, cols, resize는 CSS에서 하기 -->
+        </div>
+    </div>
+
+    <h1>04-26 아래첨자 sub</h1>
+    <div>
+        A<sub>4</sub>용지는 국정 표준용지입니다.&lt;sub&gt;를 사용합니다.<br>
+        2<sup>10</sup>은 1024입니다.&lt;sup&gt;를 사용합니다.<br>
+        <ins>삽입</ins> 문자인 경우 &lt;ins&gt;이고<br>
+        <del>삭제</del> 문자인 경우 &lt;del&gt;이고<br>
+        <s>취소</s> 문자인 경우 &lt;s&gt; 이다.
+    </div>
+
+    <h1>04-29 수학 식의 변수 정의 문자 var</h1> 
+    <div> <!-- 수학태그나 계산식에 사용 -->
+        js 변수 선언은<br>
+        <var>var a=100;</var><br>
+        <var>var b=50;</var><br>
+        <var>var c=300;</var><br>
+        <var>var d=(a+b)*c;</var><br>
+    </div>
+
+    <h1>04-30-1 ruby(윗글자=윗주) 태그 사용 방법</h1>
+    <ruby>자바스크립트 <rt>Javascript</rt></ruby>
+                        <!-- rt = ruby text -->
+    <br><br><ruby>JQuery 라이브러리<rt>자바스크립트라이브러리</rt></ruby>
+</body>
+</html>

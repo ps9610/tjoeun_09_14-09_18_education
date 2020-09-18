@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>04-17-1 이미지 맵 &lt;map shape='rect,circle,poly'&gt;&lt;/map&gt; 직사각형 영역 생성 | inline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="04-17-1 이미지 맵 &lt;map shape='rect,circle,poly'&gt;&lt;/map&gt; 직사각형 영역 생성">
+    <meta name="publisher" content="Park Sohye">
+    <style>
+        img {
+            width: 744px;
+            height: 710px;
+        }
+        area {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>04-17-1 이미지 맵 &lt;map shape='rect,circle,poly'&gt;&lt;/map&gt; 직사각형 영역 생성</h1>
+    <div>
+        <img src="./../img/학습자료_이미지/restaurant-img4.jpg" alt="" usemap="#usename">
+        <map name="usename">
+            <area shape="rect" coords="17px 180px 337px 603px" href="http://www.google.com">
+            <area shape="rect" coords="336px 79px 727px 531px" href="http://www.tjoeun.co.kr">
+            <area shape="circle" coords="536px 50px 40px" href="http://www.naver.com">
+            <area shape="circle" coords="620px 57px 45px" href="http://www.daum.net">
+        </map>
+    </div>
+    <div>
+        <img src="./../img/학습자료_이미지/restaurant-img4.jpg" alt="" usemap="#usename2">
+        <map name="usename2">
+            <area shape="rect" coords="17px 180px 337px 603px" href="http://www.chrome.com">
+            <area shape="rect" coords="336px 79px 727px 531px" href="http://www.yahooo.com">
+            <area shape="circle" coords="536px 50px 40px" href="http://www.youtube.com">
+            <area shape="circle" coords="620px 57px 45px" href="http://www.netflix.com">
+        </map>
+    </div>
+</body>
+</html>
+
+<!-- 작은토마토 left 496 right 576 top 10 r 80 반지름 40 중심점x = left+반지름 = 536 중심점 y = top+반지름 = 50
+큰토마토 left 575 top 12 right 665 r 90 반지름 45 중심점x = 620 중심점y = 47 -->

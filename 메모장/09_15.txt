@@ -1,0 +1,72 @@
+* 오늘 IP : \\192.168.0.114
+
+* html은 wrapping(div태그)을 잘 해주어야 한다.
+
+* nav 연습 많이 할 것 : pagination, indicator
+
+* 인라인 요소(Inline Element)
+- [ index ].html(.php / .jhp) : 이니셜 파일 네이밍
+- css 주석 : /* */
+-  css 특징
+ 
+    2.(누구)선택자_selector를 (어떻게 할거냐)
+블록 요소_display: block로 변경한다.
+    3. {중괄호} : 블록 단위로 묶음 단위 후 세미클론(;)으로 종결.
+    4. 형태 -> 선택자 {속성 : 속성을 변경할 값;} 
+
+- 새파일단축키 : ctrl + n or 상단 탭 더블클릭
+
+- ctrl + tab : vsc 내 윈도우 이동
+- 각각의 코드 한 줄 한 줄 스토리보드 만들 줄 알아야 함.
+(= 개발자의 니즈를 말할 수 있어야 함)
+- alt + 클릭 : 커서 만들기
+
+- inline-block : 인라인과 형태는 같지만 생겨나는 블럭의 차이가 다름.
+
+- flaot : 
+1) 인라인 요소로 변경하는 성질이 있음.
+2) 설정 가능한 값은 다음과 같습니다.
+	- none
+	- left
+	- right
+3) 입력된 순서대로 정렬이 이루어짐(=오른쪽 기준이라 뒤집어짐)
+        ex) default : 1 2 3 4 5 6 7 8
+            float:left :  1 2 3 4 5 6 7 8
+            float: right : 8 7 6 5 4 3 2 1*/
+
+* 포토폴리오 가상: http://wpdemos.themezaa.com/brando/
+https://www.w3schools.com/w3css/w3css_templates.asp
+ - 원 페이지, 스크롤이벤트, 휠이벤트, 스무스스크롤링
+	 = 패럴랙스 스크롤링(parllax scrolling)
+
+-패럴랙스 스크롤링(parllax scrolling)
+ : 마우스 스코릴링에 따라서 웹에 여러가지 효과를 줌, 유동적인 사이트 
+
+* 하이퍼링크 a 별표백만개
+- 인라인태그
+- 구성: <a href="URL(예 : https://google.com)" title="구글">
+	- title: 마우스가 올려졌을 때 보여지는 제목, 접근성 때문에 써줌
+	 / 더 많은 정보는 W3C 참고
+- 이름이 하나인 것은 id(#), 동일한 이름을 써도 되는거는 class(.)
+
+- javascript : void(0) -> 반환해주는것 없이 현재 페이지 유지
+
+- HTTP 프로토콜(The Hypertext Transfer Protocol)은 이름 그대로, 
+
+- https(hyper text transfer protocol secure) 
+	: hypertext 를 전송하기 위한 프로토콜(네트워크에서 통신하기 위한
+	 규약 또는 규칙)이다.
+	: secure -> 로그인, 주문 등 개인정보들의 유출을 방지하기 위한 웹보안
+- FTP : flie transfer protocol (서버에 파일 올릴 때)
+
+
+- 블록 플렉스 그리드 3개 성질 비슷함(블록 성질로 비슷함)
+
+- a 링크 : _blank-> 팝업해놓으면 안 뜸
+
+- a 링크로 자바스크립트 경고창 연결하기
+	- javascript: 
+		콜론(:)이 있어야 자바스크립트 인식이 됨
+
+-<a></a>먼저 쓰고 href="" 쓰고 title="" 쓰기
+

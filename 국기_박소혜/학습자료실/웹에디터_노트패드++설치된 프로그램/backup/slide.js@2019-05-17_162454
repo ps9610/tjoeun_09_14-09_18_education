@@ -1,0 +1,312 @@
+$(function(){
+	var s=[],a=[],x;  //s변수 배열 선언
+
+	
+		function sFormat(){
+			for(i=0; i<=7; i++){	
+				s[i]=0;  //s[0]=s[1]=s[2]=s[3]=s[4]=s[5]=s[6]=s[7]=0;
+			}	
+		}
+		s[0]=1; //최초 슬라이드 기본값 첫번째 슬라이드 보임(실행)
+		navBtnFn(0); //둥근버튼 함수 
+		
+	//setInterval(nextSlideFn,5000);
+	
+	//슬라이드 네비게이션 둥근버튼 클릭 이벤트
+	$('.navBtn').on({  //앵커버튼
+		click:	function(){
+			//클릭한 둥근버튼의 번호(btnNumber)를 뽑기
+			btnNumber = $(this).html().slice(-1);  //클릭한 버튼의 텍스트를 가져오기 .text()
+			//btnNumber = $(this).html().slice(4,5);  //클릭한 버튼의 텍스트를 가져오기 .text()
+
+			
+			//현재 실행중인 슬라이드 찾기
+			for(i=0; i<=7; i++){
+				if(s[i]==1){  //현재 실행중인 슬라이드 번호 i
+					if(btnNumber < i){   //클릭한 버튼번호가 슬라이드 번호보다 작으면
+						prevSlide(btnNumber);
+					}
+					else if(btnNumber > i){  //클릭한 번호가 슬라이드보다 더큰경우
+						slide(btnNumber);
+					}
+				}
+			}
+
+		}
+	});
+	
+	
+	//슬라이드 네비게이션 둥근버튼 함수
+	function navBtnFn(z){
+		$('.navBtn').removeClass('addNavBtn');
+		$('.navBtn').eq(z).addClass('addNavBtn');
+	}
+	
+	
+	
+	//prevBtn 클릭 이벤트
+	$('.prevBtn').on({
+		click:	function(){
+			prevSlideFn();
+		}
+	});
+	
+	//nextBtn 클릭 이벤트
+	$('.nextBtn').on({
+		click:	function(){
+			nextSlideFn();
+		}
+	});
+	
+	//Preview(이전슬라이드)
+	function prevSlideFn(){
+		
+		for(i=0; i<=7; i++){
+			if(s[i]==1){
+				if(i==0){   //첫번째이면 예외인경우
+					prevSlide(7); //마지막으로
+				}
+				else{
+					prevSlide(i-1);  //이전슬라이드 -1
+				}
+			}
+		}
+	
+	}
+	
+	//Next(다음슬라이드)
+	function nextSlideFn(){
+		
+		for(i=0; i<=7; i++){
+			if(s[i]==1){  //실행중인 번호 찾기
+				if(i==7){	//마지막 번호이면
+					slide(0); //첫번째 슬라이드0
+				}
+				else{
+					slide(i+1); //다음 슬라이드 +1
+				}
+			}
+		}
+
+	}
+
+	
+	
+	
+	
+	//다음슬라이드(nextSlide) 함수
+	function slide(z){
+		navBtnFn(z);
+		sFormat();
+		s[z]=1; //z번째 슬라이드 실행중임
+		
+		
+		a = [0,1,2,3,4,5,6,7];
+		x = a.pop();
+			a.unshift(x);
+		// for(i=0; i<z; i++){
+			// x = a.shift();
+			// a.push(x);
+		// }
+		
+		if(z==0){
+
+		}
+		else if(z==1){
+			x = a.pop();
+				a.unshift(x); 
+			x = a.shift();
+				a.push(x);
+		
+		}
+		else if(z==2){ 
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);				
+		}
+		else if(z==3){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);				
+			
+		}
+		else if(z==4){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);				
+		}
+		else if(z==5){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);				
+		
+		}
+		else if(z==6){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);			
+			x = a.shift();
+				a.push(x);		
+		}
+		else if(z==7){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);			
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);				
+		}
+			$('.slide').eq(a[0]).stop().animate({left:(100*0)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(a[1]).stop().animate({left:(100*1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(a[2]).stop().animate({left:(100*2)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(a[3]).stop().animate({left:(100*3)+'%'},0).animate({left:(100* 2)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(a[4]).stop().animate({left:(100*4)+'%'},0).animate({left:(100* 3)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(a[5]).stop().animate({left:(100*5)+'%'},0).animate({left:(100* 4)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(a[6]).stop().animate({left:(100*6)+'%'},0).animate({left:(100* 5)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(a[7]).stop().animate({left:(100*7)+'%'},0).animate({left:(100* 6)+'%'},1000,'easeOutExpo');
+		
+	}
+	
+	
+	
+	//이전 슬라이드  7 6 5 4 3 2 1 0  포지션이 좌측에서 우측으로 이동 
+	function prevSlide(z){
+		navBtnFn(z);
+		sFormat();
+		s[z]=1; //z 슬라이드 실행중임			
+		
+		
+		if(z==7){
+			
+		}
+		else if(z==1){
+			x = a.pop();
+				a.unshift(x); 
+			x = a.shift();
+				a.push(x);
+		
+		}
+		else if(z==2){ 
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);				
+		}
+		else if(z==3){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);				
+			
+		}
+		else if(z==4){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);				
+		}
+		else if(z==5){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);				
+		
+		}
+		else if(z==6){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);			
+			x = a.shift();
+				a.push(x);		
+		}
+		else if(z==7){
+
+			x = a.shift();
+				a.push(x);	
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);			
+			x = a.shift();
+				a.push(x);
+			x = a.shift();
+				a.push(x);				
+		}
+		if(z==7){
+			$('.slide').eq(0).stop().animate({left:(100* 0)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(7).stop().animate({left:(100*-1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(6).stop().animate({left:(100*-2)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(5).stop().animate({left:(100*-3)+'%'},0).animate({left:(100*-2)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(4).stop().animate({left:(100*-4)+'%'},0).animate({left:(100*-3)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(3).stop().animate({left:(100*-5)+'%'},0).animate({left:(100*-4)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(2).stop().animate({left:(100*-6)+'%'},0).animate({left:(100*-5)+'%'},1000,'easeOutExpo');
+			$('.slide').eq(1).stop().animate({left:(100*-7)+'%'},0).animate({left:(100*-6)+'%'},1000,'easeOutExpo');
+		}
+
+
+	}
+	
+});

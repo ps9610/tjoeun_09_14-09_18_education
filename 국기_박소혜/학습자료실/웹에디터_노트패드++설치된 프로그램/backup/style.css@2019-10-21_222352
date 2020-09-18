@@ -1,0 +1,240 @@
+@charset "utf-8";
+@import  "default.css";
+@import  "fonts.css";
+
+#wrap { width:100%; }
+	
+	#header { z-index:3; position:fixed; width:100%; height:80px; background:rgba(0,0,0, 0); transition:all 0.3s; }
+	#header.addHeader {  background:rgba(0,0,0, 1); transition:all 0.3s; }
+		.header-wrap { position:relative; width:100%; max-width:1920px; height:80px; margin:0 auto; }
+			
+			
+			/* 로고 수정 보완 */
+			.header-wrap>h2{ z-index:2; position:absolute; top:0; left:0; width:110px; height:43px; box-sizing:border-box;  padding:18.25px 0 18.25px 25px; }
+			.header-wrap>h2>a { display:block; }
+			.header-wrap>h2>a>img { width:110px; height:43px;}
+			
+			
+			/* 메인메뉴 수정 보완 */
+			.header-wrap>#nav  {  z-index:1; position:absolute; top:0; left:0; width:100%; height:80px; }
+			.header-wrap>#nav>.nav-bg { display:none; position:absolute; top:80px; left:0;  width:100%; height:270px; background:rgba(0,0,0, .8);}
+			
+			
+			
+			/* 모든 서브메뉴 부모영역 포지션 */
+			.header-wrap>#nav>ul.nav-wrap { position:relative; margin-left:240px; }
+			.header-wrap>#nav>ul.nav-wrap>li { float:left; margin:0 20px; }
+			.header-wrap>#nav>ul.nav-wrap>li:first-child { margin-left:0; }
+			.header-wrap>#nav>ul.nav-wrap>li>a { display:block; color:#fff; font-size:16px; padding:25px 0; transition:all 0.3s; }
+			.header-wrap>#nav>ul.nav-wrap>li>a:hover { color:#c96b4f; transition:all 0.3s; }
+			.header-wrap>#nav>ul.nav-wrap>li>a>i { display:block; height:13px; border-bottom:1px solid transparent; transition:all 0.3s; }
+			.header-wrap>#nav>ul.nav-wrap>li>a:hover>i { display:block; height:13px; border-bottom:1px solid #c96b4f; transition:all 0.3s; }
+				
+				
+				
+				/* 서브메뉴 */
+				.sub { position:absolute; left:0; top:80px; width:100%; }
+				.sub>ul { padding-top:30px; }
+				.sub>ul>li { padding:10px 0; }
+				.sub>ul>li>a { font-size:15px; color:#fff;  transition:all 0.3s; }
+				.sub>ul>li>a:hover { color:#c96b4f; transition:all 0.3s;  }
+				
+				
+				.sub2>ul>li { float:left; width:25%; }
+				.sub2>ul>li>a { display:block; text-align:left; }
+				.sub2>ul>li>a.addSub { text-align:center; }
+				.sub2>ul>li>a>span { display:block; text-align:left; padding-bottom:20px; font-size:15px; color:#fff;  transition:all 0.3s; }
+				.sub2>ul>li>a:hover>span { color:#c96b4f; transition:all 0.3s; }
+				.sub2>ul>li>a>img { width:77%; }
+				.sub2>ul>li>a.addSub>img { width:auto; height:130px; }
+				
+				
+				.sub3>ul>li { float:left; width:33.333%; }
+				.sub3>ul>li>ul { width:100%; }
+				.sub3>ul>li>ul>li { padding:10px 0; }
+				.sub3>ul>li>ul>li>a { font-size:15px; color:#fff;  transition:all 0.3s;  }
+				.sub3>ul>li>ul>li>a:hover { color:#c96b4f; transition:all 0.3s; }
+
+				.sub1{ display:none; }
+				.sub2{ display:none; }
+				.sub3{ display:none; }
+				.sub4{ display:none; }
+				
+		
+			/* 사이드메뉴 수정 보완 */
+			.header-wrap>#aside { z-index:2; position:absolute; top:0; right:30px;  width:auto; height:80px; }
+			.header-wrap>#aside>ul.aside-wrap { }
+			.header-wrap>#aside>ul.aside-wrap>li { float:left; }
+			
+				/* form */
+				.header-wrap>#aside>ul.aside-wrap>li>div.form-wrap { padding:29px 0; width:180px; }
+				.header-wrap>#aside>ul.aside-wrap>li>div.form-wrap>form#formSearch {  }
+				.header-wrap>#aside>ul.aside-wrap>li>div.form-wrap>form#formSearch>div.search-wrap { position:relative; }
+				.header-wrap>#aside>ul.aside-wrap>li>div.form-wrap>form#formSearch>div.search-wrap>label { display:none; }
+				.header-wrap>#aside>ul.aside-wrap>li>div.form-wrap>form#formSearch>div.search-wrap>input#search { z-index:1; position:relative;  display:block; width:100%; font-size:15px; height:22px; padding:0 32px 5px 25px; border-bottom:1px solid #fff; -webkit-background-color:transparent; background:transparent url(../img/ico_search_w.png) no-repeat 0 0; -webkit-appearance:none; appearance:none; outline:0;  color:#fff; font-size:15px; }
+				.header-wrap>#aside>ul.aside-wrap>li>div.form-wrap>form#formSearch>div.search-wrap>input#search::placeholder { color:rgba(255,255,255, .3); font-size:15px; }
+				.header-wrap>#aside>ul.aside-wrap>li>div.form-wrap>form#formSearch>div.search-wrap>a.searchBtn { z-index:2; position:absolute; top:4px; right:0; font-size:10px; color:rgba(255,255,255, 0.5); }
+				.header-wrap>#aside>ul.aside-wrap>li>div.form-wrap>form#formSearch>div.search-wrap>a.searchBtn:hover { color:rgba(255,255,255, 1); }
+				
+				/* quickLink */
+				.header-wrap>#aside>ul.aside-wrap>li>div.quikLink-wrap { position:relative; padding:32px 10px 32px 40px; }  
+				.header-wrap>#aside>ul.aside-wrap>li>div.quikLink-wrap>a.quickLinkBtn { color:#fff; font-size:16px; }  
+				.header-wrap>#aside>ul.aside-wrap>li>div.quikLink-wrap>a.quickLinkBtn>span { display:inline-block; margin-top:11px; width:60px; height:7px; background:url(../img/arr_updown04.png) no-repeat 50% 0; -webkit-transition:all 0.3s; transition:all 0.3s; }  
+				.header-wrap>#aside>ul.aside-wrap>li>div.quikLink-wrap>a.quickLinkBtn.addQuick>span { background-position:50% -7px; -webkit-transition:all 0.3s; transition:all 0.3s; }  
+					
+					/* asidesub */
+					.header-wrap>#aside>ul.aside-wrap>li>div.quikLink-wrap>div.asideSub { display:none; position:absolute; top:80px; left:0; width:110%; border:1px solid  rgba(255,255,255, 0.3); background:#000; }  
+					.header-wrap>#aside>ul.aside-wrap>li>div.quikLink-wrap>div.asideSub>ul { padding:10px 40px; }  
+					.header-wrap>#aside>ul.aside-wrap>li>div.quikLink-wrap>div.asideSub>ul>li { padding:10px 0;}  
+					.header-wrap>#aside>ul.aside-wrap>li>div.quikLink-wrap>div.asideSub>ul>li>a { color:#fff; font-size:15px; -webkit-transition:all 0.3s; transition:all 0.3s; }  
+					.header-wrap>#aside>ul.aside-wrap>li>div.quikLink-wrap>div.asideSub>ul>li>a:hover { color:#c96b4f; -webkit-transition:all 0.3s; transition:all 0.3s; text-decoration:underline; }  
+					
+				/* bar */
+				.header-wrap>#aside>ul.aside-wrap>li>div.bar-wrap { padding-top:38px; }
+				.header-wrap>#aside>ul.aside-wrap>li>div.bar-wrap>i.bar { display:block; width:2px; height:14px; background:#fff; }
+	
+				/* language */
+				.header-wrap>#aside>ul.aside-wrap>li>div.language-wrap { position:relative; padding:32px 0 32px 25px; }  
+				.header-wrap>#aside>ul.aside-wrap>li>div.language-wrap>a.languageBtn { color:#fff; font-size:16px; }  
+				.header-wrap>#aside>ul.aside-wrap>li>div.language-wrap>a.languageBtn>span { display:inline-block; margin-top:11px; width:60px; height:7px; background:url(../img/arr_updown04.png) no-repeat 50% 0; -webkit-transition:all 0.3s; transition:all 0.3s; }  
+				.header-wrap>#aside>ul.aside-wrap>li>div.language-wrap>a.languageBtn.addLanguage>span { background-position:50% -7px; -webkit-transition:all 0.3s; transition:all 0.3s; }  
+					
+					/* asidesub */
+					.header-wrap>#aside>ul.aside-wrap>li>div.language-wrap>div.asideSub { display:none; position:absolute; top:80px; left:0; width:100%; border:1px solid  rgba(255,255,255, 0.3); background:#000; }  
+					.header-wrap>#aside>ul.aside-wrap>li>div.language-wrap>div.asideSub>ul { padding:10px 0 10px 25px; }  
+					.header-wrap>#aside>ul.aside-wrap>li>div.language-wrap>div.asideSub>ul>li { padding:10px 0;}  
+					.header-wrap>#aside>ul.aside-wrap>li>div.language-wrap>div.asideSub>ul>li>a { color:#fff; font-size:15px; transition:all 0.3s; }  
+					.header-wrap>#aside>ul.aside-wrap>li>div.language-wrap>div.asideSub>ul>li>a:hover { color:#c96b4f; transition:all 0.3s; text-decoration:underline; }  
+
+				
+	
+	
+	#main { z-index:2; position:relative; width:100%; max-width:1920px; margin:0 auto; }
+		#section1 { overflow:hidden; position:relative; width:100%;  background:url(../img/genesis-g80-experience_kv_190527.jpg) no-repeat 50% 0; background-size:cover; }
+		#section1:after { z-index:1; content:''; display:block; position:absolute; top:120px; width:96%; height:100%; left:2%; margin-left:-3px; border:2px solid #c96b4f; }
+			.section1-content { z-index:2; position:absolute; width:100%; bottom:7%; text-align:center; }
+			.section1-content>h2 { cursor:default; color:#fff; font-size:75px; font-family:'Noto Sans KR'; font-weight:300; letter-spacing:-2px; transform:scale(1.2, 1);}
+			.section1-content>h3 { cursor:default; color:#fff; font-size:23px; font-weight:500; letter-spacing:-1px; padding:40px 0 30px 0; }
+			.section1-content>div.section1-button-wrap {  }
+			.section1-content>div.section1-button-wrap>button { margin:0 5px; width:16.6666667%; min-width:240px; height:48px; border:1px solid #c96b4f; color:#fff; background:rgba(0,0,0, 0.9); -webkit-appearance:none; appearance:none; border-radius:0; font-size:18px; font-weight:500; display:inline-block; cursor:pointer; }
+
+			
+		
+		#section2 { width:100%; height:340px; }
+			#section2>div { width:100%; height:340px; }
+			#section2>div>ul { width:100%; height:340px; }
+			#section2>div>ul>li { float:left; width:25%; height:340px; }
+			#section2>div>ul>li>a { display:block; width:100%; height:100%;  background:#f7f7f7;}
+			#section2>div>ul>li>a:hover {  background:#eee; }
+			#section2>div>ul>li>a>span { display:block; position:relative; width:auto; padding:20px 20px; height:300px; }
+			
+			#section2>div>ul>li>a>span>span.section2-sub-title { display:block; padding-top:25px; padding-left:20px; } /* 서브 타이틀 */
+			#section2>div>ul>li>a>span>span>strong { display:inline-block; font-size:27px; color:#000; font-weight:200; transform:scale(1.2, 1); letter-spacing:-1px; } /* 서브 타이틀 */
+			
+			#section2>div>ul>li>a>span>span.section2-more-view {display:block; padding-top:30px; }   /* 더 알아보기 */
+			#section2>div>ul>li>a>span>span.section2-more-view>span { display:inline-block; font-size:15px; color:#c96b4f; font-weight:400; }
+			#section2>div>ul>li>a>span>span.section2-more-view>span>i { display:block; width:100%; height:10px; border-bottom:1px solid #c96b4f; }
+			
+			#section2>div>ul>li>a>span>span.section2-car-img-wrap { position:absolute; bottom:70px; left:0; width:100%; display:block; text-align:center; }  /* 자동차 이미지 */
+			#section2>div>ul>li>a>span>span.section2-car-img-wrap>img { width:77%; transition:all 0.3s; }
+			#section2>div>ul>li>a>span>span.section2-car-img-wrap>img.addMore { width:auto; height:130px; padding-right:50px;}
+		
+		
+		
+		#section3 { width:100%; height:auto; }
+			#section3>div { width:100%; height:auto; }
+			#section3>div>div.section3-title { text-align:center; padding:60px 0 40px 0; }
+			#section3>div>div.section3-title>h2 { display:inline-block; text-align:center; font-size:20px; color:#c96b4f; padding-bottom:10px; border-bottom:1px solid #c96b4f; }
+			
+			#section3>div>div.section3-slide-container { position:relative; width:100%; }
+				
+				/* 슬라이드 뷰(보여지는) 박스 너비 1803픽셀 */
+				#section3>div>div.section3-slide-container>div.section3-slide-view { position:relative; width:auto; max-width:1860px; margin:0 10px 0 50px; overflow:hidden; }
+
+					.arrow-left-wrap  { z-index:2; position:absolute; top:115.828px; left:0; width:49px; height:105px; background:rgba(0,0,0, 0.8); }
+					.arrow-left-wrap>a  { display:block; padding:30px 15px 30px 11px; }
+					.arrow-left-wrap>a>span  { display:block; width:23px; height:45px; background:url(../img/m/btn_prev.png) no-repeat 50% 0; }
+					.arrow-left-wrap>a:hover>span  { background-position:50% -45px; }
+
+					.arrow-right-wrap { z-index:2; position:absolute; top:115.828px; right:0; width:49px; height:105px;  background:rgba(0,0,0, 0.8); }
+					.arrow-right-wrap>a  { display:block; padding:30px 15px 30px 11px;  }
+					.arrow-right-wrap>a>span  { display:block; width:23px; height:45px; background:url(../img/m/btn_next.png) no-repeat 50% 0; }
+					.arrow-right-wrap>a:hover>span  { background-position:50% -45px; }
+					
+					
+					
+					/* 슬라이드 박스 전체너비 16227 */
+					#section3>div>div.section3-slide-container>div.section3-slide-view>ul.section3-slide-wrap { z-index:1; position:relative; left:calc(-1842.984px*0); top:0; width:16586.856px; }
+					#section3>div>div.section3-slide-container>div.section3-slide-view>ul.section3-slide-wrap>li { float:left; width:614.328px; }
+					#section3>div>div.section3-slide-container>div.section3-slide-view>ul.section3-slide-wrap>li>div { margin-right:40px; }
+					#section3>div>div.section3-slide-container>div.section3-slide-view>ul.section3-slide-wrap>li>div>div.slide-img-wrap { width:100%; }
+					#section3>div>div.section3-slide-container>div.section3-slide-view>ul.section3-slide-wrap>li>div>div.slide-img-wrap>img { width:100%; }
+					#section3>div>div.section3-slide-container>div.section3-slide-view>ul.section3-slide-wrap>li>div>div.slide-text-wrap { width:100%; text-align:left; }
+					#section3>div>div.section3-slide-container>div.section3-slide-view>ul.section3-slide-wrap>li>div>div.slide-text-wrap>h3 { font-size:20px; color:#000; padding:40px 0 20px 0; }
+					#section3>div>div.section3-slide-container>div.section3-slide-view>ul.section3-slide-wrap>li>div>div.slide-text-wrap>p { font-size:15px; line-height:140%; color:#000; }
+				
+				
+				
+				
+				
+				
+				/* 슬라이드 네비게이션 둥근버튼 박스 */
+				#section3>div>div.section3-slide-container>ul.navBtn-wrap { position:relative; padding:60px 0 100px 0; width:100%; text-align:center; }
+				#section3>div>div.section3-slide-container>ul.navBtn-wrap>li { display:inline-block; width:8px; height:8px; margin:0 5px; }
+				#section3>div>div.section3-slide-container>ul.navBtn-wrap>li>a { display:block; width:100%; height:100%; background:#000; opacity:0.2; border-radius:50%; }
+				#section3>div>div.section3-slide-container>ul.navBtn-wrap>li>a.addNavBtn { opacity:1; background:#c96b4f; }
+				
+	
+	
+	
+	
+	
+	#footer { z-index:1; position:relative; width:100%; max-width:1920px; margin:0 auto;  }
+		.footer-row1 { width:100%; height:83px; padding:47px 0 57px 0; background:#000; }
+		.footer-row2 { width:100%; height:12px; padding:30px 0 27px 0; background:#dbdbdb; }
+		.footer-row3 { width:100%; height:58px; padding:22px 0 19px 0; background:#e6e6e6; }
+		
+		
+		/* goto Top */
+	.goTop{z-index:9;position:fixed; bottom:30px; right:30px; width:20px; height:50px;}	
+	.goTop>a{display:block; width:100%; height:100%;text-align:center; color:#a36b4f; }	
+	.goTop>a>span{display:block; font-size:0.2em;}	
+	.goTop>a>i{display:inline-block; width:1px; height:35px;background:#a36b4f; margin-top:5px;}	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+

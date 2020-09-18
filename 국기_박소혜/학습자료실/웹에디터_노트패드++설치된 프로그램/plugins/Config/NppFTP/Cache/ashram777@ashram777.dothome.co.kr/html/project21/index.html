@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!--문서모드 최신유지-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="icon57.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon114.png">
+<link href="http://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet" />
+<title>펜션을 찾아 주셔서 감사합니다.</title>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script src="js/slides.js"></script> 
+<!--첫번째 IE9 이전 버전에 HTML5 로딩 방법-->
+<!--두번째 IE9 이전 버전에 CSS3 로딩 방법-->
+<!--Upgrade MSIE5.5-6 to be compatible with MSIE7-->
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+<!--[if lte IE 7.0]>
+    <script src="js/imgSizer.js"></script>
+<![endif]-->
+	<script>
+		function mkwin(){
+			window.open('map.html','','toolbar=no, width=610, height=410');
+		}
+	</script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/slides.css">
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    </style>
+</head>
+
+<body>
+	<div id="stage">
+		<header id="header" class="cf">
+			<ul id="s_nav" class="cf">
+				<li class="menu"><a href="http://hschool.co.kr/gnuboard/bbs/login.php" onFocus="blur()"><img src="icon/icon1_on.png" alt="메인"></a></li>
+				<li class="menu"><a href="room/room.html" onFocus="blur()"><img src="icon/icon2.png" alt="룸정보"></a></li>
+				<li class="menu"><a href="reserve/contact.html" onFocus="blur()"><img src="icon/icon3.png" alt="예약/문의"></a></li>
+				<li class="menu"><a href="tel:01055550288" onFocus="blur()"><img src="icon/icon4.png" alt="전화예약"></a></li>
+				<li class="menu"><a href="" target="_blank" id="map" onFocus="blur()"><img src="icon/icon5.png" alt="구글맵"></a></li>
+			</ul>
+		</header>
+		<header id="header_fake" class="cf">
+			<ul id="s_nav_fake" class="cf">
+				<li class="menu"><a href="#" onFocus="blur()"><img src="icon/icon1_on.png" alt="메인"></a></li>
+				<li class="menu"><a href="room/room.html" onFocus="blur()"><img src="icon/icon2.png" alt="룸정보"></a></li>
+				<li class="menu"><a href="reserve/contact.html" onFocus="blur()"><img src="icon/icon3.png" alt="예약/문의"></a></li>
+				<li class="menu"><a href="tel:01055550288" onFocus="blur()"><img src="icon/icon4.png" alt="전화예약"></a></li>
+				<li class="menu"><a href="" target="_blank" onFocus="blur()"><img src="icon/icon5.png" alt="구글맵"></a></li>
+				<label for="lat">위도: <input type="text" id="lat" name="lat"></label>
+				<label for="lng">경도: <input type="text" id="lng" name="lng"></label>
+			</ul>
+		</header>
+<script>
+if(navigator.geolocation) { 
+    navigator.geolocation.getCurrentPosition(showPosition,errorPosition); 
+}
+else {
+    //return false;
+    //alert("지오로케이션 서비스는 모바일에서만 사용가능합니다.");
+}
+    
+function showPosition(position)  {
+    //35.863839, 129.257270
+    //var lat = 35.863789;
+    //var lng = 129.257278; 
+  
+    //document.getElementById('lat').value = lat;
+    //document.getElementById('lng').value = lng;
+  
+    var mapAddr = "https://maps.google.com/maps?q="+35.863839+",+"+129.257270+"+(Pension)&iwloc=A&hl=ko"; 
+    document.getElementById('map').href = mapAddr;	
+}
+  
+function errorPosition(error){
+    // alert(error.message);
+} 
+</script>
+		<nav id="nav">
+			<ul class="cf">
+				<li class="logo odd">Lamp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pension
+				</li>
+				<li class="map"><a href="#" onclick="mkwin()">Load Map</a></li>
+				<li class="game odd"><a href="game/game.html">Game</a></li>
+				<li class="reserve"><a href="reserve/contact.html">Contact</a></li>
+				<li class="room odd"><a href="room/room.html">Room Info</a></li>
+				<li class="home active"><a href="#">Home</a></li>
+			</ul>
+		</nav>
+		<div id="contents" class="cf">
+			<section id="work" class="cf">
+				<ul class="rslides">
+					<li><a href="room/room.html"><img src="images/001.jpg" alt="room1"></a></li>
+					<li><a href="room/room.html"><img src="images/002.jpg" alt="room2"></a></li>
+					<li><a href="room/room.html"><img src="images/003.jpg" alt="room3"></a></li>
+					<li><a href="room/room.html"><img src="images/004.jpg" alt="room4"></a></li>
+					<li><a href="room/room.htm5"><img src="images/005.jpg" alt="room1"></a></li>
+					<li><a href="room/room.htm6"><img src="images/006.jpg" alt="room1"></a></li>
+					<li><a href="room/room.html"><img src="images/007.jpg" alt="room7"></a></li>
+				</ul>
+			</section>
+			
+			<section id="news">
+				<iframe src="http://ashram777.dothome.co.kr/project21/recent1.php" width="98%" height="252" scrolling="yes" frameborder="0"></iframe>
+				<!-- <h2>NEWS</h2>
+				<article>
+					<h3>2018.07.02</h3>
+					<p><a href="#">
+						PC로 접속하신 분은 브라우저의 크기를 줄이시면, 모바일 화면을 보실 수 있습니다. 반응형 웹 사이트 잘 부탁드립니다.
+					</a></p>
+				</article>
+				<article>
+					<h3>2018.07.01</h3>
+					<p><a href="#">
+						PC 화면으로 접속하신 분은 전화걸기 메뉴와 구글맵 메뉴를 사용하실 수 없습니다. 이용하시려면 모바일로 접속하시면 됩니다.
+					</a></p>
+				</article>
+				<article>
+					<h3>2018.06.30</h3>
+					<p><a href="#">
+						반응형 웹디자인으로 사이트 제작을 시작하였습니다. 인터넷 익스플로러 6, 7, 8, 9, 10, 11 Version에서 크로스 브라우징을 마쳤습니다.
+					</a></p>
+				</article> -->
+			</section>
+			
+			<section id="information">
+				<iframe src="http://hschool.co.kr/gnuboard/recent2.php" width="98%" height="252" scrolling="no" frameborder="0"></iframe>
+<!-- http://ashram777.dothome.co.kr/project21/bbs/board.php?bo_table=free -->
+<!-- 				<h2>INFORMATION	</h2>
+				<ul>
+					<li><a href="#"><img src="images/bnr_recruit.jpg" alt="recruit"></a></li>
+					<li><a href="#"><img src="images/bnr_service.jpg" alt="our services"></a></li>
+				</ul> -->
+			</section>
+		</div>
+		<a href="#top" id="pagetopBtn"><img src="images/icn_pagetop.png" width="40" height="60" alt="pagetop"></a>
+
+		<footer id="footer">
+			<div>
+				<span class="logo_s">Lamp Pension</span>
+				<p>
+					등잔 펜션 주소 : 경북 경주시 북동군 429번지 <br />
+					우 : 780-280 / 도로명주소 : 북군길 180
+				</p>
+				<small>Copyright &copy; 2018 Responsive corporation. All Rights Reserved.</small>
+			</div>
+		</footer>
+	</div><!-- id="stage" -->
+</body>
+</html>
+
+
+
+
+
+
+

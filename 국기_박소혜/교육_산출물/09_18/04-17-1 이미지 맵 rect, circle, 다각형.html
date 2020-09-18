@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>04-17-1 이미지 맵 &lt;map shape='rect,circle,poly'&gt;&lt;/map&gt; 직사각형 영역 생성 | inline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="04-17-1 이미지 맵 &lt;map shape='rect,circle,poly'&gt;&lt;/map&gt; 직사각형 영역 생성">
+    <meta name="publisher" content="Park Sohye">
+</head>
+<style>
+    img {
+        width: 744px;
+        height: 710px;
+    }
+    area:active {
+        outline: 5px dotted black;
+    }
+</style>
+<body>
+    <!-- 미만(Less Than)=lt <  &lt; 엔티티 코드문자
+    초과(Great Than)=gt > &gt; 엔티티 코드문자 -->
+    
+
+    <h1>04-17-1 이미지 맵 &lt;map shape='rect,circle,poly'&gt;&lt;/map&gt; 직사각형 영역 생성</h1>
+    <div>
+        <img src="./img/학습자료_이미지/restaurant-img4.jpg" alt=""
+        usemap="#rectmap">
+        <!-- usemap 속성은 #(해쉬태그), #라는 맵을 사용하겠다는 뜻 -->
+        <map name="rectmap">
+            <!-- <area shape="rect" coords="17,181,337,603" href="http://www.naver.com" > -->
+                           <!--coords="x1좌표,y1좌표,x2좌표,y2좌표"-->
+            <area shape="poly" coords="17,181,337,181,337,531,367,531,367,603,17,603" href="http://www.naver.com" >
+
+            <area shape="rect" coords="337,79,727,531" href="http://www.tjoeun.com">
+                           <!--coords="x1좌표,y1좌표,x2좌표,y2좌표"-->
+            <area shape="circle" coords="536, 50, 40" href="http://www.google.com" >
+                            <!-- coords="원의중심x좌표, 원의중심y좌표,반지름"-->
+                                    <!-- right 665 - left 565 = 지름 100 -->
+                                    <!-- 지름 100/2 = 반지름 50 -->
+                                    <!-- left 565 + 반지름 50 = 원중심x 615 -->
+                                    <!-- top 15 + 반지름 50 = 원중심y 65-->
+            <area shape="circle" coords="615, 65, 50" href="http://www.google.com" >
+                            <!-- coords="원의중심x좌표, 원의중심y좌표,반지름"-->
+            <area shape="poly" 
+            coords=" 262,603,367,603,367,538,440,547,460,558,490,583,500,589,509,604,511,606,
+            511,627,509,635,500,649,490,658,480,664,463,671,440,677,423,680,401,681,390,681,367,678,338,671,320,664,307,658,
+            292,648,278,635,273,628,264,614,262,603" 
+            href="http://www.mail.naver.com" >
+            <!-- poly : 꼭지점을 쌍으로 찾아준다 -->
+            262,603 
+            357,603 
+            357,538
+            543,422
+            440,547 
+            460,558
+            575,480
+            490,583
+            500,589
+            509,604
+            511,606
+            511,627
+            509,635
+            500,649
+            490,658
+            480,664
+            463,671
+            440,677
+            423,680
+            401,681
+            390,681
+            367,678
+            338,671
+            320,664
+            307,658
+            292,648
+            278,635
+            273,628
+            264,614
+            262,603
+
+                            
+            <!--
+                1. 좌표태그 coords="x1=left,y1=top,x2=right,y2=bottom" 
+                2. href: 프로토콜://컴퓨터이름.회사명.회사종류.국가명
+                (인터넷사이트의 이름은 www, 
+                네이버도 co.kr했어야되는데 .com이라서 국가명 없음)
+                3. map name은 #해쉬태그
+            -->
+    </div>
+</body>
+</html>
+
+<!--      남자 여자 토마토
+x1 = left 17 337 496(윗꼭지점+반지름=중심좌표=x좌표=536)
+x2 = right 337 727 576  
+토마토지름 80 반지름 40
+y1 = top 181 79 10 10(똑같이 중심좌표=y좌표=)
+y2 = bottom 603 90 -->
+
+<!-- 큰토마토
+left 565+50(반지름) = 615 = 원중심x
+right 665
+top 12 + 50 = 65 = 원중심y
+bottom 112(눈금선 없이 지름값 구해서 바로 계산)
+지름 100 반지름 50
+-->
+

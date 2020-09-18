@@ -1,0 +1,411 @@
+$(function(){
+	var s=[];  //s변수 배열 선언
+
+		function sFormat(){
+			for(i=0; i<=7; i++){	
+				s[i]=0;  //s[0]=s[1]=s[2]=s[3]=s[4]=s[5]=s[6]=s[7]=0;
+			}	
+		}
+		s[0]=1; //최초 슬라이드 기본값 첫번째 슬라이드 보임(실행)
+		navBtnFn(0);
+	//setInterval(nextSlideFn,5000);
+	
+	//슬라이드 네비게이션 둥근버튼 클릭 이벤트
+	
+	$('.navBtn').on({  //앵커버튼
+		click:	function(){
+			//클릭한 둥근버튼의 번호(btnNumber)를 뽑기
+			btnNumber = $(this).html().slice(-1);  //클릭한 버튼의 텍스트를 가져오기 .text()
+			//btnNumber = $(this).html().slice(4,5);  //클릭한 버튼의 텍스트를 가져오기 .text()
+
+			
+			//현재 실행중인 슬라이드 찾기
+			for(i=0; i<=7; i++){
+				if(s[i]==1){  //현재 실행중인 슬라이드 번호 i
+					if(btnNumber < i){   //클릭한 버튼번호보다 슬라이드 번호가 크면
+						//이전슬라이드
+						if(btnNumber==0){
+							prevSlide0();
+						}
+						else if(btnNumber==1){
+							prevSlide1();
+						}
+						else if(btnNumber==2){
+							prevSlide2();
+						}
+						else if(btnNumber==3){
+							prevSlide3();
+						}
+						else if(btnNumber==4){
+							prevSlide4();
+						}
+						else if(btnNumber==5){
+							prevSlide5();
+						}
+						else if(btnNumber==6){
+							prevSlide6();
+						}
+						else if(btnNumber==7){
+							prevSlide7();
+						}
+						
+					}
+					else if(btnNumber > i){
+						if(btnNumber==0){
+							slide0();
+						}
+					else if(btnNumber > i){
+						
+							slide1();
+						}
+					else if(btnNumber > i){
+						
+							slide2();
+						}
+					else if(btnNumber > i){
+						
+							slide3();
+						}	
+					else if(btnNumber > i){
+						
+							slide4();
+						}
+					else if(btnNumber > i){
+						
+							slide5();
+						}
+					else if(btnNumber > i){
+						
+							slide6();
+						}
+					else if(btnNumber > i){
+					
+							slide7();
+						}	
+					}
+							
+				}
+			}
+
+		}
+	});
+	
+	
+	//슬라이드 네비게이션 둥근버튼
+	
+	function navBtnFn(z){
+		$('.navBtn').removeClass('addNavBtn');
+		$('.navBtn').eq(z).addClass('addNavBtn');
+	}
+	
+	
+	
+	//prevBtn 클릭 이벤트
+	$('.prevBtn').on({
+		click:	function(){
+			prevSlideFn();
+		}
+	});
+	
+	//nextBtn 클릭 이벤트
+	$('.nextBtn').on({
+		click:	function(){
+			nextSlideFn();
+		}
+	});
+	
+	//Preview(이전슬라이드)
+	function prevSlideFn(){
+		for(i=0;i<=7;i++){
+			if(s[i]==1){
+				if(i==0){
+					preSlide7();
+				}
+				else{
+					prevSlide(i-1);
+				}
+			}
+		}
+		
+	}
+	
+	//Next(다음슬라이드)
+	function nextSlideFn(){
+		//현재 실행중인 슬라이드 번호 다음 번호가 다음 슬라이드 
+		if(s[0]==1){  	//slide0 이 1 이면 
+			slide1();  	//다음슬라이드 slide1
+		}
+		else if(s[1]==1){
+			slide2();
+		}
+		else if(s[2]==1){
+			slide3();
+		}
+		else if(s[3]==1){
+			slide4();
+		}
+		else if(s[4]==1){
+			slide5();
+		}
+		else if(s[5]==1){
+			slide6();
+		}
+		else if(s[6]==1){
+			slide7();
+		}
+		else if(s[7]==1){  //마지막이면 
+			slide0();	//처음으로
+		}
+		
+		console.log(s);
+	}
+	
+	
+	//다음슬라이드(nextSlide) 함수
+	function slide(z){
+		navBtnFn(z);
+		sFormat(z);
+		s[z]=1; //z 슬라이드 실행중임
+			if(z==0){
+				$('.slide').eq(7).stop().animate({left:(100*0)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+				$('.slide').eq(0).stop().animate({left:(100*1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+				$('.slide').eq(1).stop().animate({left:(100*2)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+				$('.slide').eq(2).stop().animate({left:(100*3)+'%'},0).animate({left:(100* 2)+'%'},1000,'easeOutBack');
+				$('.slide').eq(3).stop().animate({left:(100*4)+'%'},0).animate({left:(100* 3)+'%'},1000,'easeOutBack');
+				$('.slide').eq(4).stop().animate({left:(100*5)+'%'},0).animate({left:(100* 4)+'%'},1000,'easeOutBack');
+				$('.slide').eq(5).stop().animate({left:(100*6)+'%'},0).animate({left:(100* 5)+'%'},1000,'easeOutBack');
+				$('.slide').eq(6).stop().animate({left:(100*7)+'%'},0).animate({left:(100* 6)+'%'},1000,'easeOutBack');
+			}
+
+			else if(z==1){
+				$('.slide').eq(0).stop().animate({left:(100*0)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+				$('.slide').eq(1).stop().animate({left:(100*1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+				$('.slide').eq(2).stop().animate({left:(100*2)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+				$('.slide').eq(3).stop().animate({left:(100*3)+'%'},0).animate({left:(100* 2)+'%'},1000,'easeOutBack');
+				$('.slide').eq(4).stop().animate({left:(100*4)+'%'},0).animate({left:(100* 3)+'%'},1000,'easeOutBack');
+				$('.slide').eq(5).stop().animate({left:(100*5)+'%'},0).animate({left:(100* 4)+'%'},1000,'easeOutBack');
+				$('.slide').eq(6).stop().animate({left:(100*6)+'%'},0).animate({left:(100* 5)+'%'},1000,'easeOutBack');
+				$('.slide').eq(7).stop().animate({left:(100*7)+'%'},0).animate({left:(100* 6)+'%'},1000,'easeOutBack');
+				
+			}
+			
+			else if(z==2){
+				
+			}
+			else if(z==3){
+				
+			}else if(z==4){
+				
+			}else if(z==5){
+				
+			}else if(z==6){
+				
+			}else if(z==7){
+				
+			}
+	}
+	function slide1(){
+		navBtnFn(1);
+		sFormat();
+		s[1]=1; //두번째 슬라이드 실행중임			
+		
+	}
+	function slide2(){
+		navBtnFn(2);
+		sFormat();
+		s[2]=1; //세번째 슬라이드 실행중임			
+		$('.slide').eq(1).stop().animate({left:(100*0)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*2)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*3)+'%'},0).animate({left:(100* 2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*4)+'%'},0).animate({left:(100* 3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*5)+'%'},0).animate({left:(100* 4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*6)+'%'},0).animate({left:(100* 5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*7)+'%'},0).animate({left:(100* 6)+'%'},1000,'easeOutBack');
+	}
+	function slide3(){
+		navBtnFn(3);
+		sFormat();
+		s[3]=1; //네번째 슬라이드 실행중임			
+		$('.slide').eq(2).stop().animate({left:(100*0)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*2)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*3)+'%'},0).animate({left:(100* 2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*4)+'%'},0).animate({left:(100* 3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*5)+'%'},0).animate({left:(100* 4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*6)+'%'},0).animate({left:(100* 5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*7)+'%'},0).animate({left:(100* 6)+'%'},1000,'easeOutBack');
+	}
+	function slide4(){
+		navBtnFn(4);
+		sFormat();
+		s[4]=1; //다섯번째 슬라이드 실행중임			
+		$('.slide').eq(3).stop().animate({left:(100*0)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*2)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*3)+'%'},0).animate({left:(100* 2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*4)+'%'},0).animate({left:(100* 3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*5)+'%'},0).animate({left:(100* 4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*6)+'%'},0).animate({left:(100* 5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*7)+'%'},0).animate({left:(100* 6)+'%'},1000,'easeOutBack');
+	}
+	function slide5(){
+		navBtnFn(5);		
+		sFormat();
+		s[5]=1; //여섯번째 슬라이드 실행중임			
+		$('.slide').eq(4).stop().animate({left:(100*0)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*2)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*3)+'%'},0).animate({left:(100* 2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*4)+'%'},0).animate({left:(100* 3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*5)+'%'},0).animate({left:(100* 4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*6)+'%'},0).animate({left:(100* 5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*7)+'%'},0).animate({left:(100* 6)+'%'},1000,'easeOutBack');
+	}
+	function slide6(){
+		navBtnFn(6);
+		sFormat();
+		s[6]=1; //일곱번째 슬라이드 실행중임			
+		$('.slide').eq(5).stop().animate({left:(100*0)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*2)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*3)+'%'},0).animate({left:(100* 2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*4)+'%'},0).animate({left:(100* 3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*5)+'%'},0).animate({left:(100* 4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*6)+'%'},0).animate({left:(100* 5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*7)+'%'},0).animate({left:(100* 6)+'%'},1000,'easeOutBack');
+	}
+	function slide7(){
+		navBtnFn(7);
+		sFormat();
+		s[7]=1; //여덟번째 슬라이드 실행중임			
+		$('.slide').eq(6).stop().animate({left:(100*0)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*2)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*3)+'%'},0).animate({left:(100* 2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*4)+'%'},0).animate({left:(100* 3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*5)+'%'},0).animate({left:(100* 4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*6)+'%'},0).animate({left:(100* 5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*7)+'%'},0).animate({left:(100* 6)+'%'},1000,'easeOutBack');
+	}
+	
+	
+	
+	//이전 슬라이드  7 6 5 4 3 2 1 0  포지션이 좌측에서 우측으로 이동 
+	function prevSlide7(){
+		sFormat();
+		navBtnFn(7);
+		s[7]=1; //여덟번째 슬라이드 실행중임			
+		$('.slide').eq(0).stop().animate({left:(100* 0)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*-1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*-2)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*-3)+'%'},0).animate({left:(100*-2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*-4)+'%'},0).animate({left:(100*-3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*-5)+'%'},0).animate({left:(100*-4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*-6)+'%'},0).animate({left:(100*-5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*-7)+'%'},0).animate({left:(100*-6)+'%'},1000,'easeOutBack');
+	}
+	function prevSlide6(){
+		navBtnFn(6);
+		sFormat();
+		s[6]=1; //여덟번째 슬라이드 실행중임			
+		$('.slide').eq(7).stop().animate({left:(100* 0)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*-1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*-2)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*-3)+'%'},0).animate({left:(100*-2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*-4)+'%'},0).animate({left:(100*-3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*-5)+'%'},0).animate({left:(100*-4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*-6)+'%'},0).animate({left:(100*-5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*-7)+'%'},0).animate({left:(100*-6)+'%'},1000,'easeOutBack');
+	}
+	
+	function prevSlide5(){
+		navBtnFn(5);
+		sFormat();
+		s[5]=1; //여덟번째 슬라이드 실행중임			
+		$('.slide').eq(6).stop().animate({left:(100* 0)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*-1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*-2)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*-3)+'%'},0).animate({left:(100*-2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*-4)+'%'},0).animate({left:(100*-3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*-5)+'%'},0).animate({left:(100*-4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*-6)+'%'},0).animate({left:(100*-5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*-7)+'%'},0).animate({left:(100*-6)+'%'},1000,'easeOutBack');
+	}
+	
+	function prevSlide4(){
+		navBtnFn(4);
+		sFormat();
+		s[4]=1; //여덟번째 슬라이드 실행중임			
+		$('.slide').eq(5).stop().animate({left:(100* 0)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*-1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*-2)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*-3)+'%'},0).animate({left:(100*-2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*-4)+'%'},0).animate({left:(100*-3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*-5)+'%'},0).animate({left:(100*-4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*-6)+'%'},0).animate({left:(100*-5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*-7)+'%'},0).animate({left:(100*-6)+'%'},1000,'easeOutBack');
+	}
+	function prevSlide3(){
+		navBtnFn(3);
+		sFormat();
+		s[3]=1; //여덟번째 슬라이드 실행중임			
+		$('.slide').eq(4).stop().animate({left:(100* 0)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*-1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*-2)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*-3)+'%'},0).animate({left:(100*-2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*-4)+'%'},0).animate({left:(100*-3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*-5)+'%'},0).animate({left:(100*-4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*-6)+'%'},0).animate({left:(100*-5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*-7)+'%'},0).animate({left:(100*-6)+'%'},1000,'easeOutBack');
+	}
+	function prevSlide2(){
+		navBtnFn(2);
+		sFormat();
+		s[2]=1; //여덟번째 슬라이드 실행중임			
+		$('.slide').eq(3).stop().animate({left:(100* 0)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*-1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*-2)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*-3)+'%'},0).animate({left:(100*-2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*-4)+'%'},0).animate({left:(100*-3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*-5)+'%'},0).animate({left:(100*-4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*-6)+'%'},0).animate({left:(100*-5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*-7)+'%'},0).animate({left:(100*-6)+'%'},1000,'easeOutBack');
+	}
+	function prevSlide1(){
+		navBtnFn(1);
+		sFormat();
+		s[1]=1; //여덟번째 슬라이드 실행중임			
+		$('.slide').eq(2).stop().animate({left:(100* 0)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(1).stop().animate({left:(100*-1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*-2)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*-3)+'%'},0).animate({left:(100*-2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*-4)+'%'},0).animate({left:(100*-3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*-5)+'%'},0).animate({left:(100*-4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*-6)+'%'},0).animate({left:(100*-5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*-7)+'%'},0).animate({left:(100*-6)+'%'},1000,'easeOutBack');
+	}
+	function prevSlide0(){
+		navBtnFn(0);
+		sFormat();
+		s[0]=1; //여덟번째 슬라이드 실행중임			
+		$('.slide').eq(1).stop().animate({left:(100* 0)+'%'},0).animate({left:(100* 1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(0).stop().animate({left:(100*-1)+'%'},0).animate({left:(100* 0)+'%'},1000,'easeOutBack');
+		$('.slide').eq(7).stop().animate({left:(100*-2)+'%'},0).animate({left:(100*-1)+'%'},1000,'easeOutBack');
+		$('.slide').eq(6).stop().animate({left:(100*-3)+'%'},0).animate({left:(100*-2)+'%'},1000,'easeOutBack');
+		$('.slide').eq(5).stop().animate({left:(100*-4)+'%'},0).animate({left:(100*-3)+'%'},1000,'easeOutBack');
+		$('.slide').eq(4).stop().animate({left:(100*-5)+'%'},0).animate({left:(100*-4)+'%'},1000,'easeOutBack');
+		$('.slide').eq(3).stop().animate({left:(100*-6)+'%'},0).animate({left:(100*-5)+'%'},1000,'easeOutBack');
+		$('.slide').eq(2).stop().animate({left:(100*-7)+'%'},0).animate({left:(100*-6)+'%'},1000,'easeOutBack');
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+});

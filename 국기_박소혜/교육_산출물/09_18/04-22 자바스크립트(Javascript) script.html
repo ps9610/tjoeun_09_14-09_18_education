@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>04-22 자바스크립트(Javascript) script| inline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="04-22 자바스크립트(Javascript) script">
+    <meta name="publisher" content="Park Sohye">
+</head>
+<body>
+    <h1>04-22 자바스크립트(Javascript) script</h1>
+<script>
+    alert("환영합니다!\n이름을 입력해주세요.\n이름:") 
+    // n = new line 
+</script>
+<script>
+    console.log("개발자 모드에서 콘솔창 띄워서 디버깅(오류수정)")
+    // 👆개발자 모드에서 확인 할 수 있음
+
+    //변수 선언하는 것 var
+    var a=5; //변수 a에 숫자 5를 입력(저장) = 대입연산
+    //a라는 변수에 5를 대입하라
+    var b=10; //변수 b에 숫자 10을 입력(저장) 
+    //b라는 변수에 10를 대입하라
+    var c=a*b; //변수 c의 값은 a*b
+    //a와 b의 연산 값은 변수 c라고 나온다.
+    var d=c/2;//변수 d의 값은 c 나누기 2 
+    console.log (a,b,c,d)
+        d=a+b*c/a //10*50(5*10)/5+5
+    console.log(d);
+    //👇오류나면 이렇게됨
+    //console.("개발자 모드에서 콘솔창 띄워서 디버깅(오류수정)')
+
+/* 
+ECMA Script 5 버전의 변수 선언은 오직 하나 var
+ECMA Script 6 버전은 여러개
+    1. let : 변수
+    2. const : 상수
+*/
+/* 스크립트는 html의 모든 태그들을 구현(건드리고 사용함)하기 위해서
+사용한다.(DOM 사용할거임)*/
+</script>
+
+<h1>04-22-4 script 태그 외부 로컬 경로 파일 사용 방법</h1> <!-- 웬만하면 위에다 쓰기 -->
+<!-- <script src="./js/jquery-1.12.4.min.js"></script> -->
+<!-- img처럼 경로따라 입력하면 됨, 👆제이쿼리 라이브러리 오픈소스,
+    안쓰고 싶으면 주석처리해-->
+<!-- <h1>04-22-3 script 태그 외부 링크 CDN 사용 방법</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+</script> -->
+<script src="./js/jquery.min.js"></script>
+<!-- 👆위에 링크에서 따온 js파일 -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="babo">제이쿼리 테스트중입니다.</h1>
+
+<script>
+//제이쿼리 라이브러리
+    $(function(){
+        alert("JQuery 라이브러리 함수 실행!")
+    }); //지금부터 제이쿼리를 사용하겠다.
+    //👆 = JQuery(); 
+
+    //바인딩 (태그요소를 제이쿼리를 이용하여 내용변경)
+    $(function(){
+        //아이디 babo 요소에 바인딩
+        $("#babo").html("<i>Hello JQuery!</i>");
+        //$("#babo").text("<i>Hello JQuery!</i>");
+        console.log("Hello JQuery = 바인딩 (태그요소를 제이쿼리를 이용하여 내용변경)")
+        //html 태그요소까지 인식 / text는 태그요소는 인식하지 못하고 글자그대로 나옴
+    });
+</script>
+</body>
+</html> 

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko  ">
+<head>
+    <title>04-14-2-1 input type='text' | inline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="04-14-2-1 input type='text'">
+    <meta name="publisher" content="Park Sohye">
+</head>
+<style>
+    .star {
+        color:red;
+    }
+    #fBtn, 
+    #fRadio1, #fRadio2, #fRadio3{
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h1>04-14-2-1 input type='text'</h1>
+    <div>
+        <div>
+            <label>아이디<span class="star">*</span></label>
+            <input type="text" name="fText" id="fText" value=""
+            placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" name="fBtn" id="fBtn" value="중복확인">
+        </div>
+
+        <div>
+            <br><label>비밀번호<span class="star">*</span></label>
+            <input type="password" name="fPw" id="fPw" value=""
+            placeholder="비밀번호를 입력해주세요">
+        </div>
+
+        <div>
+            <br><label>비밀번호확인<span class="star">*</span></label>
+            <input type="password" name="fPw" id="fPw" value=""
+            placeholder="비밀번호를 한번 더 입력해주세요">
+        </div>
+
+        <div>
+            <br><label>이름<span class="star">*</span></label>
+            <input type="name" name="fName" id="fName" value=""
+            placeholder="이름을 입력해주세요">
+        </div>
+
+        <div>
+            <br><label>이메일<span class="star">*</span></label>
+            <input type="email" name="fEmail" id="fEmail" value=""
+            placeholder="예:marketkurly@kurly.com">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" name="fBtn" id="fBtn" value="중복확인">
+        </div>
+
+        <div>
+            <br><label>휴대폰<span class="star">*</span></label>
+            <input type="tel" name="fTel" id="fTel" value=""
+            placeholder="숫자만 입력해주세요">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" name="fBtn" id="fBtn" value="인증번호 받기">
+        </div>
+
+        <div>
+            <br><label>주소<span class="star">*</span></label>
+            <input type="button" name="fBtn" id="fBtn" value="🔍 주소검색">
+            <div>
+            <label>배송지에 따라 상품 정보가 달라질 수 있습니다.</label>
+            </div>
+        </div>
+
+        <div>
+            <br><span class="agree">
+                <label>성별</label>
+            </span>
+            <span class="agree-choice">
+                <input type="radio" name="fRadio" id="fRadio1" value="male">
+                <label for="fRadio1" id="fRadio1">남자</label>
+            </span>
+            <span class="agree-choice">
+                <input type="radio" name="fRadio" id="fRadio2" value="female">
+                <label for="fRadio2" id="fRadio2">여자</label>
+            </span>
+            <span class="agree-choice">
+                <input type="radio" name="fRadio" id="fRadio3" value="none">
+                <label for="fRadio3" id="fRadio3">선택안함</label>
+            </span>
+        </div>
+
+        <div>
+            <br><label>생년월일</label>
+            <input type="date" name="fDate" id="fDate" value="">
+        </div>
+
+        <div>
+            <br>
+            <span>
+                <label>추가입력 사항</label>
+            </span>
+            <span>
+                <input type="radio" name="fRadio" id="fRadio4" value="ReferenceId">
+                <label for="fRadio4" id="fRadio4">추천인 아이디</label>
+            </span>
+            <span>
+                <input type="radio" name="fRadio" id="Radio5" value="ReferenceId">
+                <label for="fRadio5" id="fRadio5">참여 이벤트명</label>
+            </span>
+        </div>
+
+        <hr>
+        <div>
+            <br><span class="agree">
+                <label>이용약관동의<span class="star">*</span></label>
+            </span>
+            <span class="agree-choice">
+                <input type="checkbox" name="fCheck" id="fCheck" value="">
+                <label for="fCheck" id="fCheck">전체 동의합니다.</label>
+                <br><span>
+                    <label>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label>
+                </span>
+            </span>
+            <br><span class="agree-choice">
+                <input type="checkbox" name="fCheck" id="fCheck1" value="">
+                <label for="fCheck1" id="fCheck1">이용약관 동의</label>
+                <label>(필수)</label>
+            </span>
+            <br><span class="agree-choice">
+                <input type="checkbox" name="fCheck" id="fCheck2" value=""e">
+                <label for="fCheck2" id="fCheck2">개인정보처리방침 동의</label>
+                <label>(필수)</label>
+            </span>
+            <br><span class="agree-choice">
+                <input type="checkbox" name="fCheck" id="fCheck3" value="">
+                <label for="fCheck3" id="fCheck3">개인정보처리방침 동의</label>
+                <label>(선택)</label>
+            </span>
+            <br><span class="agree-choice">
+                <input type="checkbox" name="fCheck" id="fCheck4" value="">
+                <label for="fCheck4" id="fCheck4">무료배송, 할인쿠폰 등 혜택/정보 수신 동의</label>
+                <label>(선택)</label>
+            </span>
+            <br>&nbsp;&nbsp;<span class="agree-choice">
+                <input type="checkbox" name="fCheck" id="fCheck5" value="">
+                <label for="fCheck5" id="fCheck5">SMS</label>
+            </span>
+                <span class="agree-choice">
+                    <input type="checkbox" name="fCheck" id="fCheck6" value="">
+                    <label for="fCheck6" id="fCheck6">이메일</label>
+                </span>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;<label>ㄴ동의 시 한 달간 [5% 적립] + [무제한 무료배송]</label>
+                <label>(첫 주문 후 적용)</label>
+
+            <br><span class="agree-choice">
+                <input type="checkbox" name="fCheck" id="fCheck7" value="">
+                <label for="fCheck7" id="fCheck7">본인은 만 14세 이상입니다</label>
+                <label>(필수)</label>
+            </span>
+        </div>
+
+
+
+    </div>
+    <!-- <input type="" name="" id="" value=""> -->
+
+    
+</body>
+</html>

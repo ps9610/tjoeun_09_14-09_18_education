@@ -1,0 +1,52 @@
+-10시 수업-
+1. p는 인라인만 랩핑할수있다.
+2. 코딩할 때 순서 맞추어 하기 - 파일만들기-저장하기-폴더만들기-meta태그만들기
+-heading tag 후 만들기
+-11시 수업-
+2. input에서 서버에 정보를 전달해주는 것 : <input name="">
+3. <input value="입력값"> ->placeholder랑 다른점
+ name의 value를 가져오기 때문에 
+제이쿼리에서 선택대상은 id 기본입력대상은 name
+4. label은 input의 이름표, 이름: 네모박스할 때 그 이름이 label)
+tmi. *이름 이러면 필수 입력사항
+5. label, input 둘다인라인이라 밑으로 내리려면 <br>
+	옆으로 한 칸 띄우려면 &nbsp;
+6. label for = input id ->같게 쓰는 이유: 접근성 
+7. tmi : 색의 4원색 cmyk / 빛의 3원색 rgb
+	컴퓨터(키보드)비트, 2진법과 10진법, 컴퓨터는 2진법으로 작동된다.
+8. input은 무조건 div로 묶는다 그리고 lable+input을 div로 묶는다.
+-11시 수업-
+1.input태그 순서 1)type 2)name 3)id 4)value
+2. name이나 id같은 네이밍은 꼭 의미있게 써야함
+3. 일반적 : button, form: input type button
+button은 태그 안에 글자입력, input은 value값에 글자입력
+-12시 수업-
+1.input 태그 중 name은 중복가능, id는 절대중복불가능 -매우중요-
+-14시 수업-
+1. input 태그 중 name은 중복가능, id는 절대중복불가능 
+	-매우중요해서 한 번 더 씀-
+2. checkbox, radio - value값 필수
+	근데 radio는 모든 name이 같아야됨 그래야 하나하나선택이됨
+	id는 당연 모두 중복 불가능
+3. 즉 체크박스는 중복선택가능할 때, 라디오는 중복선택이 안될때 사용
+-15시수업부터-
+~자습~
+
+-질문-
+1. 왜 모든 인라인은 블럭으로 랩핑할까 - 블럭 자체에 글 쓰는건 X?
+- 구분지어주기위해서 블럭으로 묶음
+2. input에서 서버에 정보를 전달해주는 것 : <input name="">
+<input type="text" 
+            name="fname" -> input의 이름을 정해준 것
+	 id="fname" -> input의 아이디를 정해준 것(제이쿼리에서 중요한정보)
+            value="" ->(설정이 필요하면 기본값으로 설정)
+ex) 좋아하는 음식 종류를 적어주세요.
+	value="고기" 라고 입력해주면 고기가 좋은 사람은 따로 입력안하고
+	바로 다음 문항으로, 아닌 사람은 value값을 지우고 다른걸 적어줌
+
+6. label for = input id ->같게 쓰는 이유 : 접근성 
+ -> label을 input에 묶지 않는 이유 -> 절대 권장하지 않음
+label for = input id를 같게 해서 글자를 눌러도 박스를 눌러도 커서가 
+나오게 설정하도록 함.
+
+

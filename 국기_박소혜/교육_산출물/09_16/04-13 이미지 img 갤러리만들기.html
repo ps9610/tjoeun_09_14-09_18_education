@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>04-13 이미지 img 갤러리 | inline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="04-13 이미지 img 갤러리">
+    <meta name="publisher" content="Park Sohye">
+    <style>
+        * {
+            margin: 0; /*모든 태그요소 전체 바깥여백 0*/
+            padding: 0;
+        }
+
+        /*float : 이미지 사이의 여백이 없어진다*/
+
+
+        /* img {
+            vertical-align: top;
+            width: 100%;    
+            float: left;
+        }                           
+
+        img {
+            vertical-align: top;
+            width: 50%;    
+            float: left;
+        }
+        img {
+            vertical-align: top;
+            width: 33.3%;    
+            float: left;
+        } */
+
+        img {
+            vertical-align: top;
+            width: 25%;    
+            float: left;
+        }
+
+        /* img {
+            vertical-align: top;
+            width: 20%;    
+            float: left;
+        }
+        img {
+            vertical-align: top;
+            width: 12.5%;    
+            float: left;
+        } */
+        h1 {display: none;} /* hidden = 해당 태그 안보이게함 = 삭제 = 사용안함)*/
+    </style>
+</head>
+<body>
+
+
+    <h1>04-13 이미지 img 갤러리</h1>
+    <div>       
+        <!-- 
+            이미지를 줄 단위로 여러개 나열하고 가로로 배치 
+            -> 이미지 좌우에 여백생김 
+            -> float:left를 사용하여 여백 없애줌 
+        -->
+        <img src="./img/work-1.jpg.jpg" alt="이미지1">
+        <img src="./img/work-2.jpg.jpg" alt="이미지2">
+        <img src="./img/work-3.jpg.jpg" alt="이미지3">
+        <img src="./img/work-4.jpg.jpg" alt="이미지4">
+        <img src="./img/work-5.jpg.jpg" alt="이미지5">
+        <img src="./img/work-6.jpg.jpg" alt="이미지6">
+        <img src="./img/work-7.jpg.jpg" alt="이미지7">
+        <img src="./img/work-8.jpg.jpg" alt="이미지8">
+    </div>
+
+    
+</body>
+</html>
