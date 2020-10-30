@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<NppFTP defaultCache="%CONFIGDIR%\Cache\%USERNAME%@%HOSTNAME%" outputShown="0" windowRatio="0.5" clearCache="0" clearCachePermanent="0">
-    <Profiles>
-        <Profile name="닷홈계정" hostname="ashram7.dothome.co.kr" port="21" username="ashram7" password="" askPassword="1" timeout="30" securityMode="0" transferMode="0" connectionMode="0" dataPortMin="10000" dataPortMax="32000" listParams="" initialDir="/html/" keyFile="" passphrase="" askPassphrase="0" useAgent="0" acceptedMethods="1">
-            <Cache />
-            <FileTypes asciiTypes="" binaryTypes="" />
-        </Profile>
-    </Profiles>
-</NppFTP>
